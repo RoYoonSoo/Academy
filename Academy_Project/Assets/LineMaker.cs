@@ -10,8 +10,6 @@ public class ManagerScript : MonoBehaviour
     public Image linePrefab;
     public Transform canvas;
     public float lineDrawSpeed = 2f;
-    private static ManagerScript _instance;
-    public static ManagerScript Instance => _instance ??= FindObjectOfType<ManagerScript>() ?? new GameObject(typeof(ManagerScript).Name).AddComponent<ManagerScript>();
     public Dictionary<int, int> answerDict = new Dictionary<int, int>()
     {
         {1, 7}, {2, 8}, {3, 9}, {4, 10}, {5, 6},

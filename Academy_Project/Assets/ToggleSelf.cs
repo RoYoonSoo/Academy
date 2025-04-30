@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ToggleSelf : MonoBehaviour
 {
     private Toggle myToggle;
-
+    [SerializeField] ManagerScript managerScript;
     void Start()
     {
         myToggle = GetComponent<Toggle>();
@@ -16,13 +16,6 @@ public class ToggleSelf : MonoBehaviour
 
     void OnMyToggleValueChanged(bool isOn, string name, GameObject gameObject)
     {
-        if (ManagerScript.Instance != null)
-        {
-            ManagerScript.Instance.OnToggleValueChanged(isOn, name, gameObject);
-        }
-        else
-        {
-            Debug.LogError("ManagerScript Instance가 null입니다.");
-        }
+        managerScript.OnToggleValueChanged(isOn, name, gameObject);
     }
 }
