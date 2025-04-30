@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class SceneManagement : MonoBehaviour
 {
+    [SerializeField] Image Panel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,10 +21,16 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadScene1()
     {
-        SceneManager.LoadScene("Game1Scene");
+        Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
+        {
+            SceneManager.LoadScene("Game1Scene");
+        });
     }
     public void LoadScene2()
     {
-        SceneManager.LoadScene("Game2Scene");
+        Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
+        {
+            SceneManager.LoadScene("Game2Scene");
+        });
     }
 }
