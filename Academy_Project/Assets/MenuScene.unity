@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW GAME  1
+  m_text: WORD MATCH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}
   m_sharedMaterial: {fileID: -2066418510632344438, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}
@@ -4017,7 +4017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -55380}
+  m_AnchoredPosition: {x: -6, y: -85626}
   m_SizeDelta: {x: 796, y: 3751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311141801
@@ -4794,7 +4794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW GAME 2
+  m_text: SENTENCE PUZZLE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}
   m_sharedMaterial: {fileID: -2066418510632344438, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}

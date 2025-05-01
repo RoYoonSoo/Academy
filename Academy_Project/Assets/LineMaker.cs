@@ -75,9 +75,9 @@ public class ManagerScript : MonoBehaviour
                         GameObject obj2 = GameObject.Find("Image (" + num2 + ")");
                         if (obj1 != null && obj2 != null)
                         {
-                            correctImg.transform.DOScale(4.0f, 1.5f).SetEase(Ease.OutBack).OnComplete(() =>
+                            correctImg.transform.DOScale(4.0f, 1.0f).SetEase(Ease.OutBack).OnComplete(() =>
                             {
-                                correctImg.transform.DOScale(0.0f, 1.0f).OnComplete(() =>
+                                correctImg.transform.DOScale(0.0f, 0.75f).OnComplete(() =>
                                 {
                                     CreateConnectionLine(obj1.transform.GetChild(1), obj2.transform.GetChild(1), num1, num2);
                                 });
@@ -87,9 +87,9 @@ public class ManagerScript : MonoBehaviour
                     else
                     {
                         Debug.Log("오답입니다. " + num1 + " and " + num2 + " are not connected.");
-                        wrongImg.transform.DOScale(4.0f, 1.5f).SetEase(Ease.OutBack).OnComplete(() =>
+                        wrongImg.transform.DOScale(4.0f, 1.0f).SetEase(Ease.OutBack).OnComplete(() =>
                         {
-                            wrongImg.transform.DOScale(0.0f, 1.0f).OnComplete(() =>
+                            wrongImg.transform.DOScale(0.0f, 0.75f).OnComplete(() =>
                             {
                                 Toggle toggle1 = GameObject.Find("Toggle (" + num1 + ")")?.GetComponent<Toggle>();
                                 Toggle toggle2 = GameObject.Find("Toggle (" + num2 + ")")?.GetComponent<Toggle>();
