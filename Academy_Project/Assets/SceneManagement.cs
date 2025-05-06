@@ -33,4 +33,11 @@ public class SceneManagement : MonoBehaviour
             SceneManager.LoadScene("Game2Scene");
         });
     }
+    public void LoadScene3()
+    {
+        Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
+        {
+            SceneManager.LoadScene("Game3Scene");
+        });
+    }
 }

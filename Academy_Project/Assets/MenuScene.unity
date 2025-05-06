@@ -588,7 +588,7 @@ RectTransform:
   m_GameObject: {fileID: 139453509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00001, y: 0.00001, z: 0.00001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1029894809}
@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW GAME 3
+  m_text: DIAGRAM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}
   m_sharedMaterial: {fileID: -2066418510632344438, guid: baf8bce7c6a28de468a7b58d78fa1cbe, type: 2}
@@ -2911,7 +2911,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829630228}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1938195802}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: LoadScene3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &866086507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,7 +4030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1737}
   m_SizeDelta: {x: 1193, y: 3786}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1311141801
