@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using DG.Tweening;
+using System;
 
 public class ManagerScript : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ManagerScript : MonoBehaviour
     private bool firstClickIsLeft = false;
     [SerializeField] Image correctImg;
     [SerializeField] Image wrongImg;
+    public int correctNum = 0;
 
     public void OnToggleValueChanged(bool isOn, string name, GameObject gameObject)
     {
@@ -82,6 +84,15 @@ public class ManagerScript : MonoBehaviour
                                     CreateConnectionLine(obj1.transform.GetChild(1), obj2.transform.GetChild(1), num1, num2);
                                 });
                             });
+                        }
+                        obj1.GetComponent<Image>().color = Color.green;
+                        obj2.GetComponent<Image>().color = Color.green;
+                        correctNum++;
+                        if (correctNum == 5)
+                        {
+                            Debug.Log("모든 연결이 완료되었습니다!");
+                            GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected] = new Tuple<int, bool>(GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected].Item1, true);
+                            correctImg.transform.DOScale(2.25f, 1.0f).SetEase(Ease.OutBack);
                         }
                     }
                     else

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -15,6 +18,8 @@ public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private DropArea currentArea = DropArea.None; // 현재 위치한 영역 추적
 
     private enum DropArea { None, AOnly, BOnly, Intersect }
+    public Image correctImg;
+    public Image Panel;
 
     // 각 영역에 배치된 오브젝트 상태를 추적하는 정적 Dictionary (모든 객체가 공유)
     private static Dictionary<DropArea, List<string>> areaObjectMap = new Dictionary<DropArea, List<string>>
@@ -26,7 +31,7 @@ public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private static Dictionary<DropArea, List<string>> answerMap = new Dictionary<DropArea, List<string>>
     {
         { DropArea.AOnly, new List<string>(){"A","B"} },
-        { DropArea.BOnly, new List<string>(){ "E", "F" } },
+        { DropArea.BOnly, new List<string>(){ "E"} },
         { DropArea.Intersect, new List<string>(){ "C", "D"}  }
     };
     void Awake()
@@ -34,6 +39,7 @@ public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         originalPos = rectTransform.anchoredPosition; // 초기 배치 위치 저장
+        Panel.DOFade(0.0f, 0.75f);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -259,6 +265,19 @@ public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         // 디버그 로그 출력
         Debug.Log($"맵 비교 결과: {isEqual}");
 
+        if (isEqual)
+        {
+            GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected] = new Tuple<int, bool>(GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected].Item1, true);
+            correctImg.transform.DOScale(2.25f, 1.0f).SetEase(Ease.OutBack);
+        }
+
         return isEqual;
+    }
+    public void menu()
+    {
+        Panel.DOFade(0.0f, 0.75f).OnComplete(() =>
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelScene"); // 메인 메뉴 씬 로드
+        });
     }
 }

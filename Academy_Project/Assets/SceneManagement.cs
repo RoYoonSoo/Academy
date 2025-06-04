@@ -23,21 +23,29 @@ public class SceneManagement : MonoBehaviour
     {
         Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
         {
-            SceneManager.LoadScene("Game1Scene");
+            SceneManager.LoadScene("MiddleScene");
         });
     }
     public void LoadScene2()
     {
         Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
         {
-            SceneManager.LoadScene("Game2Scene");
+            SceneManager.LoadScene("MiddleScene");
         });
     }
     public void LoadScene3()
     {
         Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
         {
-            SceneManager.LoadScene("Game3Scene");
+            SceneManager.LoadScene("MiddleScene");
+        });
+    }
+
+    public void LoadSelectMenu()
+    {
+        Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
+        {
+            SceneManager.LoadScene("MiddleScene");
         });
     }
 }

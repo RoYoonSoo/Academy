@@ -15,7 +15,7 @@ public class Game1Manager : MonoBehaviour
     {
         Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
         {
-            SceneManager.LoadScene("MenuScene");
+            SceneManager.LoadScene("LevelScene");
         });
     }
 }

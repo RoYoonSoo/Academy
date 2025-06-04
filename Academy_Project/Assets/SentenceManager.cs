@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using DG.Tweening;
+using System;
 
 public class SentenceManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class SentenceManager : MonoBehaviour
     [SerializeField] GameObject Star;
     [SerializeField] Image Panel;
 
-    private void Awake()
+    private void OnEnable()
     {
         Panel.DOFade(0.0f, 0.75f);
     }
@@ -235,7 +236,7 @@ public class SentenceManager : MonoBehaviour
     public void LogSortedChildNumbers()
     {
         numbers = GetChildNumbersInOrder();
-        if (numbers.Count == 7)
+        if (numbers.Count == realAnswerNumbers.Count)
         {
             for (int i = 0; i < numbers.Count; i++)
             {
@@ -247,6 +248,7 @@ public class SentenceManager : MonoBehaviour
                 }
             }
             Debug.Log("맞음");
+            GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected] = new Tuple<int, bool>(GameManager.Instance.finishedDictionary[GameManager.Instance.currentObject][GameManager.Instance.levelSelected].Item1, true);
             Star.transform.DOScale(2.25f, 1.0f).SetEase(Ease.OutBack);
         }
         return;
@@ -256,7 +258,7 @@ public class SentenceManager : MonoBehaviour
     {
         Panel.DOFade(1.0f, 0.75f).OnComplete(() =>
         {
-            SceneManager.LoadScene("MenuScene");
+            SceneManager.LoadScene("LevelScene");
         });
     }
 }
