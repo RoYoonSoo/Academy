@@ -13,8 +13,8 @@ public class ManagerScript : MonoBehaviour
     public float lineDrawSpeed = 2f;
     public Dictionary<int, int> answerDict = new Dictionary<int, int>()
     {
-        {1, 7}, {2, 8}, {3, 9}, {4, 10}, {5, 6},
-        {7, 1}, {8, 2}, {9, 3}, {10, 4}, {6, 5}
+        {1, 7}, {2, 10}, {3, 6}, {4, 8}, {5, 9},
+        {7, 1}, {10, 2}, {6, 3}, {8, 4}, {9, 5}
     };
 
     private List<int> clickedNumbers = new List<int>();

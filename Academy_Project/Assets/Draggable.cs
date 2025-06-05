@@ -5,7 +5,7 @@ using System;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private RectTransform areaA;
     [SerializeField] private RectTransform areaB;
@@ -177,7 +177,7 @@ public class UIDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             obj.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
             // Dictionary 업데이트
-            UIDraggable draggable = obj.GetComponent<UIDraggable>();
+            Draggable draggable = obj.GetComponent<Draggable>();
             if (draggable != null)
             {
                 draggable.currentArea = dropArea;
