@@ -12,6 +12,11 @@ public class LevelScene : MonoBehaviour
     bool clicked1 = false;
     bool clicked2 = false;
     bool clicked3 = false;
+
+    bool isChanging = false; // 레벨 버튼이 변경 중인지 여부를 나타내는 변수
+    bool isChanging2 = false; // 레벨 버튼이 변경 중인지 여부를 나타내는 변수
+    bool isChanging3 = false; // 레벨 버튼이 변경 중인지 여부를 나타내는 변수
+
     void Awake()
     {
         panel.DOFade(0.0f, 0.75f);
@@ -61,21 +66,26 @@ public class LevelScene : MonoBehaviour
     {
         GameManager.Instance.levelSelected = 0; // 선택된 레벨을 0으로 설정
         clicked1 = !clicked1;
-        buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
 
-        buttons[0].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked1;
-        buttons[0].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked1;
-        if (clicked1 == true)
+
+        if (clicked1 == true && isChanging == false)
         {
+            buttons[0].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked1;
+            buttons[0].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked1;
+            isChanging = true;
             buttons[0].transform.GetChild(1).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f);
-            buttons[0].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f);
+            buttons[0].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f).OnComplete(() =>
+            {
+                isChanging = false;
+            });
         }
-        else
+        else if (clicked1 == false && isChanging == false)
         {
             buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
             buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
@@ -95,21 +105,25 @@ public class LevelScene : MonoBehaviour
         GameManager.Instance.levelSelected = 1; // 선택된 레벨을 0으로 설정
         clicked2 = !clicked2;
 
-        buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
 
-        buttons[1].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked2;
-        buttons[1].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked2;
-        if (clicked2 == true)
+        if (clicked2 == true && isChanging2 == false)
         {
+            buttons[1].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked2;
+            buttons[1].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked2;
+            isChanging2 = true;
             buttons[1].transform.GetChild(1).gameObject.transform.DOScale(new Vector3(-1.31f, 1.2f, 1), 1.0f);
-            buttons[1].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(-1.31f, 1.2f, 1), 1.0f);
+            buttons[1].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(-1.31f, 1.2f, 1), 1.0f).OnComplete(() =>
+            {
+                isChanging2 = false;
+            });
         }
-        else
+        else if (clicked2 == false && isChanging2 == false)
         {
             buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
             buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
@@ -129,21 +143,26 @@ public class LevelScene : MonoBehaviour
         GameManager.Instance.levelSelected = 2; // 선택된 레벨을 0으로 설정
         clicked3 = !clicked3;
 
-        buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
-        buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[1].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
+        // buttons[2].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);
 
-        buttons[2].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked3;
-        buttons[2].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked3;
-        if (clicked3 == true)
+
+        if (clicked3 == true && isChanging3 == false)
         {
+            buttons[2].transform.GetChild(1).gameObject.GetComponent<Image>().enabled = clicked3;
+            buttons[2].transform.GetChild(2).gameObject.GetComponent<Image>().enabled = clicked3;
+            isChanging3 = true;
             buttons[2].transform.GetChild(1).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f);
-            buttons[2].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f);
+            buttons[2].transform.GetChild(2).gameObject.transform.DOScale(new Vector3(1.31f, 1.2f, 1), 1.0f).OnComplete(() =>
+            {
+                isChanging3 = false;
+            });
         }
-        else
+        else if (clicked3 == false && isChanging3 == false)
         {
             buttons[0].transform.GetChild(1).gameObject.transform.DOScale(Vector3.zero, 0.0f);
             buttons[0].transform.GetChild(2).gameObject.transform.DOScale(Vector3.zero, 0.0f);

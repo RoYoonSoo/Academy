@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 48
+  controlID: 38
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 39
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 40
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -448,9 +448,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aacf0000
-      m_LastClickedID: 53162
-      m_ExpandedIDs: 34dfffff4ce0ffff24e3ffff2ce4ffffeee4ffff9ae5ffff4ee6fffffae6ffffb6e7ffff6ae8ffff1ee9ffff60eaffff14ebffffe2faffffd4bc0000fac8000072ca00004acf0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1abefeff6cbffeff40c2feff54c2feff6ac2feff88c2feffacc2feffc2c2feffe0c2fefffec2feff20c3feff40c3feff5cc3feff88c3feff0ed5feff60d6feff34d9feff48d9feff5ed9feff7cd9feffa0d9feffb6d9feffd4d9fefff2d9feff14dafeff34dafeff50dafeff7cdafefffaecfeff4ceefeff20f1feff34f1feff4af1feff68f1feff8cf1feffa2f1feffc0f1feffdef1feff00f2feff20f2feff3cf2feff68f2feff880effffda0fffffb612ffffd212fffff012ffff1613ffff4213ffff6013ffff8613ffffac13ffffd613fffffe13ffff2214ffff5614ffff6015ffff1616ffff6617ffff1a18ffffca18ffff8019ffff341affffea1affffa61bffff5a1cffff0e1dffffba1dffff6e1effff2a94ffffdeafffff08b5ffffb2b9ffff8cbcffff40bdffffe6bdffff9abeffffbac1ffff1ec3ffffdcc3ffff56caffff66ecffff9eefffff44f4ffff38f5ffff90f6ffffe2fafffffcb7000042b90000a8bc00001ed6000028d6000098d60000aad60000c6d60000f8d600007ad900009cdb0000a6db000016dc000028dc000044dc000076dc000022e200009ce20000aee20000cae20000fce20000aaef0000f2ef000004f0000014f0000026f0000030f0000042f00000ea2c0100e24b010012660100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1314,7 +1314,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/CELL3
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1324,16 +1324,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 81
   m_LastFolders:
-  - Assets/CELL3
+  - Assets
   m_LastFoldersGridSize: 81
   m_LastProjectPath: "C:\\Users\\tommy\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Academy\\Academy_Project"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c2b50000
-    m_LastClickedID: 46530
-    m_ExpandedIDs: 0000000036b50000ffffff7f
+    m_SelectedIDs: 4cb50000
+    m_LastClickedID: 46412
+    m_ExpandedIDs: 000000004cb50000eeb50000764f0100784f0100ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000036b50000
+    m_ExpandedIDs: 000000004cb50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1391,7 +1391,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000086c5000042b500009aa300009ea60100000c0100fa0b0100ce090100dc0b0100e62001007689000038b60000a0ca0000f2100100a22d0100aa2d0100eec50000
+    m_ExpandedInstanceIDs: c623000086c5000042b500009aa300009ea60100000c0100fa0b0100ce090100dc0b0100e62001007689000038b60000a0ca0000f2100100a22d0100aa2d0100eec5000098b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1416,7 +1416,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 308.66666}
     m_GridSize: 81
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 208.33333

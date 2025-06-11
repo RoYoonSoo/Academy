@@ -1003,7 +1003,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
   m_Resource: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2256,8 +2256,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cad11a4481c77fe4aabeb5563cb0bd6c, type: 3}
+  m_Resource: {fileID: 8300000, guid: cad11a4481c77fe4aabeb5563cb0bd6c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2357,6 +2357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiSoundSource: {fileID: 1275708244}
   buttonClickClip: {fileID: 8300000, guid: cad11a4481c77fe4aabeb5563cb0bd6c, type: 3}
+  uiSoundVolume: 1
 --- !u!4 &1275708246
 Transform:
   m_ObjectHideFlags: 0
